@@ -1,0 +1,33 @@
+@import compass
+
+.buttons
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
+  width: 100%
+  min-height: 20px
+  box-sizing: border-box
+  padding: 6px
+  padding-top: 4px
+  padding-bottom: 18px
+  +background-image(linear-gradient(rgba(black, 0.6), transparent))
+  opacity: 0
+  transition: opacity .10s ease-in-out
+
+  .button
+    padding: 8px
+    float: left
+    font-size: 20px
+    color: white
+    cursor: pointer
+    opacity: 0.8
+    &:hover
+      opacity: 1
+
+    &.button-right
+      float: right
+
+body:hover
+  .buttons
+    opacity: 1

@@ -1,0 +1,29 @@
+{
+  "name": "Twitch Mini Player (Extension)",
+  "short_name": "Twitch Mini Player",
+  "description": "Floating & Always-On-Top Twitch Player",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "minimum_chrome_version": "39",
+  "icons": {
+    "16": "images/icons/icon-16.png",
+    "48": "images/icons/icon-48.png",
+    "128": "images/icons/icon-128.png",
+    "256": "images/icons/icon-256.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.twitch.tv/*"],
+      "js": [
+        "vendor/jquery.min.js",
+        "js/conf.js",
+        "js/twitch-ui.js"
+      ],
+      "css": ["css/twitch-ui.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "install.html"
+  ]
+}
