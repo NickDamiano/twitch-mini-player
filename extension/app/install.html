@@ -16,7 +16,14 @@
 
   <div>The companion Chrome app is required for Twitch Mini Player to work.</div>
 
-  <a class="button install" href="#" onclick="chrome.webstore.install(); return false;">Install</a>
+  <a class="button install" href="#" onclick="install();">Install</a>
+
+<script>
+function install() {
+  chrome.webstore.install();
+  return false;
+}
+</script>
 
 </body>
 
