@@ -40,7 +40,7 @@ run = ->
     .find('.button')
       .attr('original-title', 'Mini Player')
       .removeAttr('data-ember-action')
-      .find('path').attr('d', 'M15,14l-4-4v4H1V4h10v4l4-4h2v10H15z')
+      .find('path').attr('d', 'M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z')
 
   $miniPlayerButton
     .insertAfter('.channel-actions .theatre-button')
