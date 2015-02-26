@@ -1,4 +1,4 @@
 if 'update_url' in chrome.runtime.getManifest() # prod
-  extensionId = ''
+  extensionId = 'fjeahcfaibacboijpccppebdpihhbflk'
 else # dev
   extensionId = 'ogbjgjanjbmefafepbdfpbnknangapnk'

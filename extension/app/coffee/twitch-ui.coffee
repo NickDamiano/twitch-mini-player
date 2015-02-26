@@ -55,13 +55,14 @@ run = ->
       channel = window.location.href.match(/(?:twitch.tv\/)(.*)/)[1]
 
       chrome.runtime.sendMessage chromeAppId,
+        type: 'launch'
         channel: channel
       , (response) ->
         if not response
-          console.log 'Chrome app is not installed or enabled.'
 
-          w = 600
-          h = 300
-          left = screen.width / 2 - (w / 2)
-          top = screen.height / 2 - (h / 2)
-          window.open chrome.extension.getURL('install.html'), 'Install Twitch Mini Player', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left
+          chrome.runtime.sendMessage
+            type: 'set_channel_intent'
+            channel: channel
+
+          chrome.runtime.sendMessage
+            type: 'open_install_popup'

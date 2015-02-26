@@ -1,4 +1,4 @@
 if 'update_url' in chrome.runtime.getManifest() # prod
-  chromeAppId = ''
+  chromeAppId = 'efgochcggfpajofoidkjhelkaihdflpo'
 else # dev
   chromeAppId = 'ompflmhoamndmnjgfkcglfbciooccidk'
