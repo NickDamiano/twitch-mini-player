@@ -6,6 +6,12 @@ init = (channel) ->
 $ ->
   init(window.location.hash.substring(1))
 
+  $('.player').on 'loadcommit', (e) ->
+    if e.originalEvent.isTopLevel
+      @.insertCSS
+        code: 'body { overflow: hidden }'
+        runAt: 'document_start'
+
   $('.button.close').on 'click', ->
     chrome.app.window.current().close()
     if chrome.app.window.get('chat')
@@ -26,8 +32,8 @@ $ ->
       innerBounds:
         width: 275
         height: 340
-        left: screen.width - 275 - 10
-        top: screen.height - 400 - 10 - 186 - 10
+        left: screen.availWidth - 275 - 10
+        top: screen.availHeight - 340 - 10 - 157 - 10
         minWidth: 275
         minHeight: 200
     , (w) ->
@@ -49,10 +55,10 @@ $ ->
       focused: false
       resizable: false
       innerBounds:
-        width: 60
-        height: 60
-        left: playerWindowInnerBounds.left + playerWindowInnerBounds.width - 60
-        top: playerWindowInnerBounds.top + playerWindowInnerBounds.height - 60
+        width: 114
+        height: 50
+        left: playerWindowInnerBounds.left + playerWindowInnerBounds.width - 114
+        top: playerWindowInnerBounds.top + playerWindowInnerBounds.height - 50
 
     chrome.app.window.current().hide()
 

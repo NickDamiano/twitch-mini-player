@@ -20,7 +20,9 @@
 
 <script>
 function install() {
-  chrome.webstore.install();
+  chrome.webstore.install(undefined, undefined, function(error) {
+    console.log(error);
+  });
   return false;
 }
 </script>

@@ -12,10 +12,10 @@ chrome.runtime.onMessage.addListener (message, sender, sendResponse) ->
 
 chrome.runtime.onMessage.addListener (message, sender, sendResponse) ->
   if message.type == 'open_install_popup'
-    width = 300
-    height = 150
-    left = screen.width / 2 - (width / 2)
-    top = screen.height / 2 - (height / 2)
+    width = 500
+    height = 250
+    left = Math.round(screen.availWidth / 2 - (width / 2))
+    top = Math.round(screen.availHeight / 2 - (height / 2))
 
     chrome.windows.create
       url: 'http://twitch-mini-player.s3-website-us-east-1.amazonaws.com/install.html'
