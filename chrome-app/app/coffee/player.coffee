@@ -1,3 +1,13 @@
+service = analytics.getService('twitch-mini-player')
+tracker = service.getTracker('UA-60216905-1')
+tracker.sendAppView('player')
+
+setInterval (->
+  tracker.sendEvent('_ping', '1')
+), 60*10
+
+##########
+
 init = (channel) ->
   $('.player')
     .attr('src', 'http://www.twitch.tv/' + channel + '/popout')

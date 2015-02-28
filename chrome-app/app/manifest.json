@@ -1,7 +1,7 @@
 {
   "name": "Twitch Mini Player",
   "description": "Required companion Chrome app.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "manifest_version": 2,
   "minimum_chrome_version": "39",
   "icons": {
@@ -22,6 +22,7 @@
   "permissions": [
     "storage",
     "webview",
-    "app.window.alwaysOnTop"
+    "app.window.alwaysOnTop",
+    "https://www.google-analytics.com/"
   ]
 }
