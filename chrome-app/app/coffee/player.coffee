@@ -33,7 +33,7 @@ $ ->
         width: 275
         height: 340
         left: screen.availWidth - 275 - 10
-        top: screen.availHeight - 340 - 10 - 157 - 10
+        top: screen.availHeight - 340 - 10 - 155 - 10
         minWidth: 275
         minHeight: 200
     , (w) ->

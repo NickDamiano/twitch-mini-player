@@ -22,11 +22,11 @@ launchMiniPlayer = (channel) ->
     focused: false
     innerBounds:
       width: 275
-      height: 157
+      height: 155
       left: screen.availWidth - 275 - 10
-      top: screen.availHeight - 157 - 10
+      top: screen.availHeight - 155 - 10
       minWidth: 275
-      minHeight: 157
+      minHeight: 155
 
 
 chrome.runtime.onInstalled.addListener (details) ->
