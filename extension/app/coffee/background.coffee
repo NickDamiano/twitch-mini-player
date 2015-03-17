@@ -24,3 +24,27 @@ chrome.runtime.onMessage.addListener (message, sender, sendResponse) ->
       height: height
       left: left
       top: top
+
+
+chrome.contextMenus.create
+  id: 'channel_link'
+  title: 'Launch Twitch Mini Player'
+  contexts: ['link']
+  targetUrlPatterns: ['*://www.twitch.tv/*']
+
+chrome.contextMenus.onClicked.addListener (info) ->
+  if info.menuItemId == 'channel_link'
+    channel = info.linkUrl.match(/(?:twitch.tv\/)(.*)/)[1]
+
+    chrome.runtime.sendMessage chromeAppId,
+      type: 'launch'
+      channel: channel
+    , (response) ->
+      if not response
+
+        chrome.runtime.sendMessage
+          type: 'set_channel_intent'
+          channel: channel
+
+        chrome.runtime.sendMessage
+          type: 'open_install_popup'

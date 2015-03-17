@@ -33,6 +33,7 @@
     "install.html"
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus"
   ]
 }
