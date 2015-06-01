@@ -1,7 +1,7 @@
 {
   "name": "Twitch Mini Player",
   "description": "Always-on-Top Floating Mini Player for Twitch.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "manifest_version": 2,
   "minimum_chrome_version": "39",
   "icons": {
