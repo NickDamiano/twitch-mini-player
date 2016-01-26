@@ -18,7 +18,7 @@ window.onpopstate = (e) ->
 
 waitForIt = ->
   checkExist = setInterval (->
-    if $('.channel-actions .theatre-button').length
+    if $('.channel-actions .js-options').length
       clearInterval(checkExist)
       run()
   ), 20
@@ -31,22 +31,21 @@ run = ->
   if $('.channel-actions .miniplayer-button').length
     return
 
-  $miniPlayerButton = $('.channel-actions .theatre-button').clone()
+  $miniPlayerButton = $('.channel-actions .js-options').clone()
 
   $miniPlayerButton
-    .removeClass('theatre-button').addClass('miniplayer-button')
+    .removeClass('js-options drop').addClass('miniplayer-button')
 
   $miniPlayerButton
-    .find('.button')
-      .attr('original-title', 'Mini Player')
-      .removeAttr('data-ember-action')
-      .find('path').attr('d', 'M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z')
+    .attr('original-title', 'Mini Player')
+    .removeAttr('data-ember-action')
+    .find('path').attr('d', 'M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z')
 
   $miniPlayerButton
-    .insertAfter('.channel-actions .theatre-button')
+    .insertAfter('.channel-actions .js-options')
 
   executeInPageScope ->
-    $('.channel-actions .miniplayer-button .button').tipsy()
+    $('.channel-actions .miniplayer-button').tipsy()
 
   $miniPlayerButton
     .on 'click', ->
