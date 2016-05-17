@@ -18,7 +18,7 @@ window.onpopstate = (e) ->
 
 waitForIt = ->
   checkExist = setInterval (->
-    if $('.channel-actions .js-options').length
+    if $('.channel-actions .js-channel-options').length
       clearInterval(checkExist)
       run()
   ), 20
@@ -31,18 +31,11 @@ run = ->
   if $('.channel-actions .miniplayer-button').length
     return
 
-  $miniPlayerButton = $('.channel-actions .js-options').clone()
+  $miniPlayerButton = $('<div class="inline miniplayer-button" original-title="Mini Player" />')
+  $miniPlayerButton.append('<a class="button glyph-only action" style="margin: 0;"><svg class="svg-gear" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px"><path clip-rule="evenodd" d="M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z" fill-rule="evenodd"></path></svg></a>')
 
   $miniPlayerButton
-    .removeClass('js-options drop').addClass('miniplayer-button')
-
-  $miniPlayerButton
-    .attr('original-title', 'Mini Player')
-    .removeAttr('data-ember-action')
-    .find('path').attr('d', 'M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z')
-
-  $miniPlayerButton
-    .insertAfter('.channel-actions .js-options')
+    .insertAfter('.channel-actions .ember-view:last-child')
 
   executeInPageScope ->
     $('.channel-actions .miniplayer-button').tipsy()

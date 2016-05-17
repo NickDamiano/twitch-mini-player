@@ -4,4 +4,4 @@ else # dev
   if navigator.appVersion.indexOf('Win') >= 0
     extensionId = 'bffdjjiapibkimbfedaclkfipoipkool'
   else
-    extensionId = 'ogbjgjanjbmefafepbdfpbnknangapnk'
+    extensionId = 'faldhiaifhahidiinajamcdamdainkmj'

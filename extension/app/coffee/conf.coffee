@@ -4,4 +4,4 @@ else # dev
   if navigator.appVersion.indexOf('Win') >= 0
     chromeAppId = 'pmkokjeihmijcgickeeibnbgkldhpiip'
   else
-    chromeAppId = 'ompflmhoamndmnjgfkcglfbciooccidk'
+    chromeAppId = 'jhnjapchippoiobajfmdajmiggdoiaao'
