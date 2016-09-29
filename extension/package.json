@@ -2,11 +2,11 @@
   "name": "twitch-mini-player-extension",
   "private": true,
   "devDependencies": {
-    "grunt-contrib-clean": "0.6.x",
-    "grunt-contrib-coffee": "0.13.x",
-    "grunt-contrib-compass": "1.0.x",
-    "grunt-contrib-compress": "0.13.x",
-    "grunt-contrib-watch": "0.6.x",
-    "load-grunt-tasks": "3.2.x"
+    "grunt-contrib-clean": "1.0.x",
+    "grunt-contrib-coffee": "1.0.x",
+    "grunt-contrib-compass": "1.1.x",
+    "grunt-contrib-compress": "1.3.x",
+    "grunt-contrib-watch": "1.0.x",
+    "load-grunt-tasks": "3.5.x"
   }
 }
