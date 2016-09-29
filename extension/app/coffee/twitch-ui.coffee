@@ -18,7 +18,7 @@ window.onpopstate = (e) ->
 
 waitForIt = ->
   checkExist = setInterval (->
-    if $('.channel-actions .js-channel-options').length
+    if $('.player-buttons-right').length
       clearInterval(checkExist)
       run()
   ), 20
@@ -28,17 +28,13 @@ $ ->
 
 run = ->
 
-  if $('.channel-actions .miniplayer-button').length
+  if $('.player-buttons-right .miniplayer-button').length
     return
 
-  $miniPlayerButton = $('<div class="miniplayer-button" original-title="Mini Player" style="float: right;" />')
-  $miniPlayerButton.append('<a class="button button--icon-only action" style="margin: 0;"><figure><svg class="svg-gear" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px"><path clip-rule="evenodd" d="M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z" fill-rule="evenodd"></path></svg></figure></a>')
+  $miniPlayerButton = $('<button class="miniplayer-button player-button"><span class="player-tip js-tip">Mini player</span><svg style="width: 1.8em; margin-left: 1.1em;" class="svg-gear" version="1.1" viewBox="0 0 18 12" x="0px" y="0px"><path clip-rule="evenodd" d="M0,0 L18,0 L18,12 L0,12 L0,0 Z M8,6 L18,6 L18,12 L8,12 L8,6 Z M9,7 L18,7 L18,12 L9,12 L9,7 Z" fill-rule="evenodd"></path></svg></button>');
 
-  $('.channel-actions')
-    .append($miniPlayerButton);
-
-  executeInPageScope ->
-    $('.channel-actions .miniplayer-button').tipsy()
+  $('.player-buttons-right')
+    .prepend($miniPlayerButton);
 
   $miniPlayerButton
     .on 'click', ->
