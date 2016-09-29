@@ -31,18 +31,21 @@ run = ->
   if $('.channel-actions .miniplayer-button').length
     return
 
-  $miniPlayerButton = $('<div class="inline miniplayer-button" original-title="Mini Player" />')
-  $miniPlayerButton.append('<a class="button glyph-only action" style="margin: 0;"><svg class="svg-gear" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px"><path clip-rule="evenodd" d="M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z" fill-rule="evenodd"></path></svg></a>')
+  $miniPlayerButton = $('<div class="miniplayer-button" original-title="Mini Player" style="float: right;" />')
+  $miniPlayerButton.append('<a class="button button--icon-only action" style="margin: 0;"><figure><svg class="svg-gear" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px"><path clip-rule="evenodd" d="M1,13 L8,13 L8,3 L1,3 L1,13 M8,8 L15,8 L15,3 L8,3 L8,8 M9,13 L15,13 L15,9 L9,9 L9,13 Z" fill-rule="evenodd"></path></svg></figure></a>')
 
-  $miniPlayerButton
-    .insertAfter('.channel-actions .ember-view:last-child')
+  $('.channel-actions')
+    .append($miniPlayerButton);
 
   executeInPageScope ->
     $('.channel-actions .miniplayer-button').tipsy()
 
   $miniPlayerButton
     .on 'click', ->
-      $('#player object')[0].pauseVideo()
+      flashVideo = $('.player-video object')[0]
+      html5Video = $('.player-video video')[0]
+      flashVideo.pauseVideo() if flashVideo
+      html5Video.pause() if html5Video
 
       channel = window.location.href.match(/(?:twitch.tv\/)(.*)/)[1]
 
