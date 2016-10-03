@@ -31,7 +31,7 @@ run = ->
   if $('.player-buttons-right .miniplayer-button').length
     return
 
-  $miniPlayerButton = $('<button class="miniplayer-button player-button"><span class="player-tip js-tip">Mini player</span><svg style="width: 1.8em; margin-left: 1.1em;" class="svg-gear" version="1.1" viewBox="0 0 18 12" x="0px" y="0px"><path clip-rule="evenodd" d="M0,0 L18,0 L18,12 L0,12 L0,0 Z M8,6 L18,6 L18,12 L8,12 L8,6 Z M9,7 L18,7 L18,12 L9,12 L9,7 Z" fill-rule="evenodd"></path></svg></button>');
+  $miniPlayerButton = $('<button class="miniplayer-button player-button"><span class="player-tip js-tip" data-tip="Mini Player"></span><svg style="width: 1.8em; margin-left: 1.1em;" class="svg-gear" version="1.1" viewBox="0 0 18 12" x="0px" y="0px"><path clip-rule="evenodd" d="M0,0 L18,0 L18,12 L0,12 L0,0 Z M8,6 L18,6 L18,12 L8,12 L8,6 Z M9,7 L18,7 L18,12 L9,12 L9,7 Z" fill-rule="evenodd"></path></svg></button>');
 
   $('.player-buttons-right')
     .prepend($miniPlayerButton);
